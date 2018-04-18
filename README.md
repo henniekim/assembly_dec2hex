@@ -1,5 +1,5 @@
 # Assembly Hex 2 Dec 
-> 본 프로젝트는 2018년 봄학기 마이크로프로세서 중간고사 과제로 진행 것입니다.
+> 본 프로젝트는 2018년 봄학기 마이크로프로세서 중간고사 과제로 진행 것입니다.  
 > Subroutine, parameter passing using stack, modular programming 등을 배울 목적으로 작성한 코드입니다.
 
 ## 설치 방법
