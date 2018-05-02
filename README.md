@@ -5,7 +5,7 @@
 ## 설치 방법
 
 ## 사용 예제
-MicriVision 프로그램이 있어야 합니다.
+MicroVision 프로그램이 있어야 합니다.
 
 ## 개발 환경 설정
 Assembly language  
