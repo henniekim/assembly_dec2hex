@@ -1,0 +1,12 @@
+*.bak
+*.d
+*.lst
+*.o
+*.crf
+*.map
+*.crf
+*.uvopt
+*.uvproj
+*.htm
+*.axf
+*.lnp
