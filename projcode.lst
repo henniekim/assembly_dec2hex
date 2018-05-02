@@ -1,0 +1,136 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 area             projcode, code
+    2 00000000                 extern           num2ascii
+    3 00000000                 extern           ascii2num
+    4 00000000                 entry
+    5 00000000         __main  proc
+    6 00000000                 export           __main [weak]
+    7 00000000         ;--------------- insert your code between the lines ----
+                       --------
+    8 00000000 4806            ldr              r0, dec_string
+    9 00000002 4907            ldr              r1, =hex_string
+   10 00000004 6008            str              r0, [r1]
+   11 00000006 B401            push             {r0}
+   12 00000008 F7FF FFFE       bl               ascii2num   ; convert decimal s
+                                                            tring to hex number
+                                                             : "1234" -> 0x04d2
+                                                            
+   13 0000000C BC01            pop              {r0}
+   14 0000000E B401            push             {r0}
+   15 00000010 F7FF FFFE       bl               num2ascii   ; convert number : 
+                                                            0x04d2 -> 0x3034443
+                                                            2
+   16 00000014 BC01            pop              {r0}
+   17 00000016 4902            ldr              r1, =hex_string
+   18 00000018 6008            str              r0, [r1]    ; dec2hexcomplete
+   19 0000001A         ;-------------------------------------------------------
+                       --------
+   20 0000001A E7FE    here    b                here
+   21 0000001C                 endp
+   22 0000001C                 align
+   23 0000001C 31 32 33 
+                       dec_string
+                               dcb              "123"
+   24 0000001F 00              align
+   25 00000020 00000000 
+              00000000         area             projdata, data
+   26 00000000 00 00 00 
+              00       hex_string
+                               space            4
+   27 00000004                 end
+Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\projco
+de.d -o.\projcode.o -ID:\keil\ARM\RV31\INC -ID:\keil\ARM\CMSIS\Include -ID:\kei
+l\ARM\Inc\ST\STM32F10x --predefine="__EVAL SETA 1" --list=.\projcode.lst projco
+de.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+__main 00000000
+
+Symbol: __main
+   Definitions
+      At line 5 in file projcode.s
+   Uses
+      At line 6 in file projcode.s
+Comment: __main used once
+dec_string 0000001C
+
+Symbol: dec_string
+   Definitions
+      At line 23 in file projcode.s
+   Uses
+      At line 8 in file projcode.s
+Comment: dec_string used once
+here 0000001A
+
+Symbol: here
+   Definitions
+      At line 20 in file projcode.s
+   Uses
+      At line 20 in file projcode.s
+Comment: here used once
+projcode 00000000
+
+Symbol: projcode
+   Definitions
+      At line 1 in file projcode.s
+   Uses
+      None
+Comment: projcode unused
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+hex_string 00000000
+
+Symbol: hex_string
+   Definitions
+      At line 26 in file projcode.s
+   Uses
+      At line 9 in file projcode.s
+      At line 17 in file projcode.s
+
+projdata 00000000
+
+Symbol: projdata
+   Definitions
+      At line 25 in file projcode.s
+   Uses
+      None
+Comment: projdata unused
+2 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+ascii2num 00000000
+
+Symbol: ascii2num
+   Definitions
+      At line 3 in file projcode.s
+   Uses
+      At line 12 in file projcode.s
+Comment: ascii2num used once
+num2ascii 00000000
+
+Symbol: num2ascii
+   Definitions
+      At line 2 in file projcode.s
+   Uses
+      At line 15 in file projcode.s
+Comment: num2ascii used once
+2 symbols
+341 symbols in table

@@ -1,0 +1,1 @@
+.\projcode.o: projcode.s
